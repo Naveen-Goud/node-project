@@ -1,15 +1,13 @@
-
 {
   "compilerOptions": {
-    "jsx": "react",
+    "target": "ES6",
     "module": "commonjs",
+    "jsx": "react",
+    "strict": true,
     "esModuleInterop": true,
-    "target": "es6",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "skipLibCheck": true,
+    "types": ["jest", "node", "@testing-library/jest-dom"],
+    "typeRoots": ["./node_modules/@types"]
   },
-  "lib": ["es2015"],
-  "include": ["src", "jest.setup.ts"]
+  "include": ["src"]
 }

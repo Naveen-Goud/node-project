@@ -1,6 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App'; 
+import '@testing-library/jest-dom/jest-globals';
+import '@testing-library/jest-dom';
+
+import App from './App';
 
 test('renders hello message', () => {
   render(<App />);
