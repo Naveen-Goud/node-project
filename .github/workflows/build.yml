@@ -41,7 +41,7 @@ jobs:
         run: npm test
       - name: SonarCloud Scan
         with:
-          projectBaseDir: app/client
+          projectBaseDir: app/node_project
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
