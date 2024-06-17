@@ -11,8 +11,8 @@ module.exports = {
     coverageDirectory: 'coverage', // Optional: specify a directory for the coverage report
     coverageReporters: ['text', 'lcov'],
     collectCoverageFrom: [
-      "src/**/*.{ts,tsx}", // Specify the files for which coverage should be collected
-      "!src/**/*.d.ts",   // Exclude type declaration files
-    ],
+    "src/**/*.{ts,tsx}", // Specify the files for which coverage should be collected
+    "!src/**/*.d.ts",   // Exclude type declaration files
+  ],
   };
   
