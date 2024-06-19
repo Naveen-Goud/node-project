@@ -2,14 +2,20 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "commonjs",
+    "lib": ["dom", "es6"],
+    "types": ["jest", "node", "@testing-library/jest-dom"],
     "jsx": "react",
-    "outDir":"dist",
-    "lib": ["dom", "esnext"],
-    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["jest", "node", "@testing-library/jest-dom"],
-    "typeRoots": ["./node_modules/@types"]
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
   "include": ["src"]
 }
