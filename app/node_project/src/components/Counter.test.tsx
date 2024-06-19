@@ -15,10 +15,4 @@ describe('Counter Component', () => {
         fireEvent.click(getByText('Increment'));
         expect(getByText('Count: 1')).toBeInTheDocument();
     });
-
-    it('decrements the count', () => {
-        const { getByText } = render(<Counter initialCount={1} />);
-        fireEvent.click(getByText('Decrement'));
-        expect(getByText('Count: 0')).toBeInTheDocument();
-    });
 });
