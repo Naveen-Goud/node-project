@@ -16,3 +16,9 @@ describe('Counter Component', () => {
         expect(getByText('Count: 1')).toBeInTheDocument();
     });
 });
+test('check gfgObj toEqual', () => {
+    let gfgObj: { name: string; type?: string } = { name: "GFG" };
+    gfgObj.type = "company";
+    expect(gfgObj).toEqual({ name: "GFG", type: "company" });
+  });
+  

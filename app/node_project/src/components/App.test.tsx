@@ -10,3 +10,14 @@ test('renders hello message', () => {
   const helloElement = screen.getByText(/Hello, TypeScript and React!/i);
   expect(helloElement).toBeInTheDocument();
 });
+test('check gfgObj toEqual', () => {
+  let gfgObj: { name: string; type?: string } = { name: "GFG" };
+  gfgObj.type = "company";
+  expect(gfgObj).toEqual({ name: "GFG", type: "company" });
+});
+test('check gfgObj toEqual', () => {
+  let gfgObj: { name: string; type?: string } = { name: "GFG" };
+  gfgObj.type = "company";
+  expect(gfgObj).toEqual({ name: "GFG", type: "company" });
+});
+

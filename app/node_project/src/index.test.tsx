@@ -15,3 +15,8 @@ describe('Index file', () => {
     expect(document.getElementById('root')?.textContent).toBe('Hello, TypeScript and React!');
   });
 });
+test('check gfgObj toEqual', () => {
+  let gfgObj: { name: string; type?: string } = { name: "GFG" };
+  gfgObj.type = "company";
+  expect(gfgObj).toEqual({ name: "GFG", type: "company" });
+});
