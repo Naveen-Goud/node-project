@@ -20,3 +20,13 @@ test('check gfgObj toEqual', () => {
   gfgObj.type = "company";
   expect(gfgObj).toEqual({ name: "GFG", type: "company" });
 });
+interface GfgObj {
+  name: string;
+  type?: string;
+}
+
+test('check gfgObj toEqual', () => {
+  let gfgObj: GfgObj = { name: "GFG" };
+  gfgObj.type = "company";
+  expect(gfgObj).toEqual({ name: "GFG", type: "company" });
+});
