@@ -41,3 +41,9 @@ test('check gfgObj toEqual', () => {
     gfgObj.type = "company";
     expect(gfgObj).toEqual({ name: "GFG", type: "company" });
   });
+
+  test('check gfgObj toEqual', () => {
+    let gfgObj: GfgObj = { name: "GFG" };
+    gfgObj.type = "company";
+    expect(gfgObj).toEqual({ name: "GFG", type: "company" });
+  });
