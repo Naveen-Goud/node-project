@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "app/client/**"
+      - ".github/workflows/build.yml"
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -10,10 +13,10 @@ jobs:
     if: ( startsWith(github.head_ref, 'FE_') && github.event.pull_request.merged == false ) || ( github.event_name == 'push' )
     name: SonarCloud
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     defaults:
       run:
-        working-directory: app/client
+        working-directory: app/client/
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,16 +29,12 @@ jobs:
         with:
           path: ${{ github.workspace }}/app/client/node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
-      - name: Install Node.js 20.11.1
-        uses: actions/setup-node@v2
-        with:
-          node-version: "20.11.1"
-  
-      - name: Install the dependencies
-        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+      - name: Install dependencies
         run: npm install
+      - name: Build
+        run: npm run build
       - name: Test and coverage
-        run: npm test 
+        run: npm test
       - name: SonarCloud Scan
         with:
           projectBaseDir: app/client
