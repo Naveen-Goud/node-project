@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - "app/node_project/"
+      - "app/client/"
       - ".github/workflows/build.yml"
   pull_request:
     types: [opened, synchronize, reopened]
@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 8
     defaults:
       run:
-        working-directory: app/node_project
+        working-directory: app/client
     steps:
       - uses: actions/checkout@v3
         with:
@@ -41,7 +41,7 @@ jobs:
         run: npm test 
       - name: SonarCloud Scan
         with:
-          projectBaseDir: app/node_project
+          projectBaseDir: app/client
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
