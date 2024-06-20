@@ -27,7 +27,7 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          path: ${{ github.workspace }}/frontend/node_modules
+          path: ${{ github.workspace }}/app/client/node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
       - name: Install dependencies
         run: npm install
